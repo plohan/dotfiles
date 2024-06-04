@@ -16,6 +16,12 @@
       url = "github:Eandrju/cellular-automaton.nvim";
       flake = false;
     };
+
+    hyprland.url = "github:hyprwm/Hyprland/v0.40.0";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {

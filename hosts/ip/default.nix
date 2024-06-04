@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ../../modules/system.nix
       ../../modules/docker.nix
-      ../../modules/hyprland.nix
     ];
 
   # Bootloader.
@@ -45,14 +44,12 @@
     slurp
     swappy
 
-    platformio-core
     gcc
     patchelf
     pkg-config
     openssl
 
-    unstable.hyprlock
-    unstable.hypridle
+    dconf
   ];
 
   services.pcscd.enable = true;
@@ -128,9 +125,4 @@
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", \
         MODE="660", GROUP="plugdev", TAG+="uaccess"
   '';
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-gtk
-  ];
 }

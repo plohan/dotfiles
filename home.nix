@@ -1,7 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [ ./modules/neovim ];
+  imports = [
+    ./modules/neovim
+    ./modules/hyprland-home-manager
+  ];
 
   home.username = "imsozrious";
   home.homeDirectory = "/home/imsozrious";
