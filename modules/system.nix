@@ -32,7 +32,7 @@
       powerline-fonts
       nerdfonts
     ];
-  
+
     fontconfig = {
       defaultFonts = {
         serif = [ "Noto Sans Thai Looped" ];
