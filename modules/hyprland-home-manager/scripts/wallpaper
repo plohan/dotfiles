@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+swww query || swww init --no-cache
+swww img --no-resize ~/.config/hypr/wallpapers/Moss.png --transition-type any --transition-fps 60
+sleep 3 && swww img --no-resize ~/.config/hypr/wallpapers/preview.gif --fill-color 202020 --transition-type wipe --transition-fps 60

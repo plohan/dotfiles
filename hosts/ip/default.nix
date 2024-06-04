@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ../../modules/system.nix
       ../../modules/docker.nix
+      ../../modules/hyprland.nix
     ];
 
   # Bootloader.
