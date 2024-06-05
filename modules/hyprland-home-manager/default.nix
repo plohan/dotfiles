@@ -40,12 +40,9 @@
     hyprlock
     hypridle
 
-    eww
     swww
-    waybar
     wofi
 
-    pavucontrol
     # xwaylandvideobridge
     networkmanagerapplet
   ];
