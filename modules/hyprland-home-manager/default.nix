@@ -5,12 +5,12 @@
   wayland.windowManager.hyprland.extraConfig = builtins.readFile ./hyprland.conf;
   wayland.windowManager.hyprland.systemd.variables = ["--all"];
 
-  home.file."~/.config/hypr/wallpapers" = {
+  home.file.".config/hypr/wallpapers" = {
     source = ./wallpapers;
     recursive = true;
   };
 
-  home.file."~/.config/hypr/scripts" = {
+  home.file.".config/hypr/scripts" = {
     source = ./scripts;
     recursive = true;
   };
