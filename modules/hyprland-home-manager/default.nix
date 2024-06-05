@@ -44,6 +44,8 @@
     swww
     waybar
     wofi
+
+    pavucontrol
     # xwaylandvideobridge
     networkmanagerapplet
   ];

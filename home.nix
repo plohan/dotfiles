@@ -4,6 +4,7 @@
   imports = [
     ./modules/neovim
     ./modules/hyprland-home-manager
+    ./modules/waybar
   ];
 
   home.username = "imsozrious";
