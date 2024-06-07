@@ -47,6 +47,10 @@
       ".direnv"
       ".envrc"
     ];
+    extraConfig = {
+      merge.tool = "vimdiff";
+      init.defaultBranch = "main";
+    };
   };
 
   programs.home-manager.enable = true;
