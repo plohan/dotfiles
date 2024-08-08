@@ -6,6 +6,7 @@
     ./modules/hyprland-home-manager
     ./modules/waybar
     ./modules/firefox.nix
+    ./modules/zoxide.nix
   ];
 
   home.username = "imsozrious";
@@ -33,7 +34,6 @@
 
     eza
     yq
-    zoxide
 
     mtr
 
@@ -57,6 +57,23 @@
   programs.home-manager.enable = true;
   programs.direnv.enable = true;
 
-  home.stateVersion = "23.11";
+  programs.bash.enable = true;
+
+  programs.bash.shellAliases = {
+    lg = "lazygit";
+    v = "nvim";
+    k = "kubectl";
+    dc = "docker compose";
+  };
+
+  programs.bash.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
+  home.stateVersion = "24.05";
 }
 
