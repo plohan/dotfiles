@@ -5,6 +5,7 @@
     ./modules/neovim
     ./modules/hyprland-home-manager
     ./modules/waybar
+    ./modules/firefox.nix
   ];
 
   home.username = "imsozrious";
