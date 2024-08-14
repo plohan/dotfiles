@@ -45,5 +45,6 @@
 
       "Google".metaData.alias = "@g";
     };
+    search.force = true;
   };
 }
