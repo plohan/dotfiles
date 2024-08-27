@@ -5,6 +5,7 @@
     ./modules/neovim
     ./modules/hyprland-home-manager
     ./modules/waybar
+    ./modules/ags
     ./modules/firefox.nix
     ./modules/zoxide.nix
   ];
@@ -38,6 +39,7 @@
     mtr
 
     lazygit
+    typst
   ];
 
   programs.git = {

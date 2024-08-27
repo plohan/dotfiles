@@ -20,6 +20,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.upower.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -53,6 +54,9 @@
     dconf
   ];
 
+
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
   services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;
@@ -125,5 +129,19 @@
     # esp32 board
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", \
         MODE="660", GROUP="plugdev", TAG+="uaccess"
+
+    # Digilent
+    ATTRS{idVendor}=="1443", MODE:="666"
+    ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{manufacturer}=="Digilent", MODE:="666"
+
+    ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{manufacturer}=="Xilinx", MODE:="666"
+
+    ATTR{idVendor}=="03fd", ATTR{idProduct}=="0008", MODE="666"
+    ATTR{idVendor}=="03fd", ATTR{idProduct}=="0007", MODE="666"
+    ATTR{idVendor}=="03fd", ATTR{idProduct}=="0009", MODE="666"
+    ATTR{idVendor}=="03fd", ATTR{idProduct}=="000d", MODE="666"
+    ATTR{idVendor}=="03fd", ATTR{idProduct}=="000f", MODE="666"
+    ATTR{idVendor}=="03fd", ATTR{idProduct}=="0013", MODE="666"
+    ATTR{idVendor}=="03fd", ATTR{idProduct}=="0015", MODE="666"
   '';
 }
