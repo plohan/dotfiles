@@ -17,7 +17,7 @@
       flake = false;
     };
 
-    hyprland.url = "github:hyprwm/Hyprland/v0.42.0";
+    hyprland.url = "github:hyprwm/Hyprland/v0.44.0";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
