@@ -53,6 +53,11 @@
     extraConfig = {
       merge.tool = "vimdiff";
       init.defaultBranch = "main";
+      url = {
+        "ssh://git@github.com" = {
+          insteadOf = "https://github.com";
+        };
+      };
     };
   };
 
