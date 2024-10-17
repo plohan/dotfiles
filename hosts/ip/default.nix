@@ -55,8 +55,6 @@
   ];
 
 
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.guest.enable = true;
   services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;
