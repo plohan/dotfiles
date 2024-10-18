@@ -1,23 +1,7 @@
 { pkgs, ... }:
 
-{
-  programs.firefox.enable = true;
-  programs.firefox.profiles.imsozrious =
-  {
-    id = 0;
-    isDefault = true;
-    name = "imsozrious";
-    bookmarks = [
-      {
-        name = "Github";
-        url = "https://github.com";
-      }
-      {
-        name = "Nixpkgs";
-        url = "https://search.nixos.org";
-      }
-    ];
-    search.engines = {
+let
+  searchengines = {
       "Nixpkgs" = {
         urls = [{
           template = "https://search.nixos.org/packages";
@@ -42,9 +26,27 @@
         iconUpdateURL = "https://github.com/favicon.svg";
         definedAliases = [ "@gh" ];
       };
-
       "Google".metaData.alias = "@g";
-    };
+  };
+in
+{
+  programs.firefox.enable = true;
+  programs.firefox.profiles.imsozrious =
+  {
+    id = 0;
+    isDefault = true;
+    name = "imsozrious";
+    bookmarks = [
+      {
+        name = "Github";
+        url = "https://github.com";
+      }
+      {
+        name = "Nixpkgs";
+        url = "https://search.nixos.org";
+      }
+    ];
+    search.engines = searchengines;
     search.force = true;
   };
 }
