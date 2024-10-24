@@ -22,7 +22,8 @@
     discord
     zip
     unzip
-    neofetch
+    fastfetch
+    obs-studio
 
     unstable.cargo
     unstable.rustc
