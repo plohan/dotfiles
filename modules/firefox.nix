@@ -46,6 +46,14 @@ in
         url = "https://search.nixos.org";
       }
     ];
+    containers = {
+      tcaster = {
+        color = "orange";
+        id = 1;
+        icon = "cart";
+      };
+    };
+    containersForce = true;
     search.engines = searchengines;
     search.force = true;
   };
