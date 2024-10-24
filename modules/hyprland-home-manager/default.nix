@@ -1,9 +1,11 @@
 { inputs, pkgs, nixpkgs-unstable, lib, ... }:
 
 {
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.extraConfig = builtins.readFile ./hyprland.conf;
-  wayland.windowManager.hyprland.systemd.variables = ["--all"];
+  wayland.windowManager.hyprland = {
+    enable = true;
+    extraConfig = builtins.readFile ./hyprland.conf;
+    systemd.variables = ["--all"];
+  };
 
   home.file.".config/hypr/wallpapers" = {
     source = ./wallpapers;

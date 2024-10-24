@@ -5,7 +5,7 @@
     ./modules/neovim
     ./modules/hyprland-home-manager
     ./modules/waybar
-    ./modules/ags
+    # ./modules/ags
     ./modules/firefox.nix
     ./modules/zoxide.nix
   ];

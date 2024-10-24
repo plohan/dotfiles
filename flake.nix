@@ -17,11 +17,7 @@
       flake = false;
     };
 
-    hyprland.url = "github:hyprwm/Hyprland/v0.44.1";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    hyprland.url = "github:hyprwm/Hyprland";
 
     ags = {
       url = "github:Aylur/ags";
