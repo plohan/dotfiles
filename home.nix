@@ -5,6 +5,7 @@
     ./modules/neovim
     ./modules/hyprland-home-manager
     ./modules/waybar
+    ./modules/vscode.nix
     # ./modules/ags
     ./modules/firefox.nix
     ./modules/zoxide.nix
@@ -26,8 +27,6 @@
     unstable.cargo
     unstable.rustc
     unstable.rust-analyzer
-
-    vscode
 
     openocd
     ripgrep
