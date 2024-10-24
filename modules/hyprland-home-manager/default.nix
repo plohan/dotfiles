@@ -39,8 +39,6 @@
 
   home.packages = with pkgs; [
     brightnessctl
-    hyprlock
-    hypridle
 
     swww
     wofi
