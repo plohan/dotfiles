@@ -58,6 +58,7 @@
           insteadOf = "https://github.com";
         };
       };
+      user.signingkey = "5ACE2C4FBD9AD588";
     };
   };
 
