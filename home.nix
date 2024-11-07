@@ -3,10 +3,10 @@
 {
   imports = [
     ./modules/neovim
-    ./modules/hyprland-home-manager
-    ./modules/waybar
+    #./modules/hyprland-home-manager
+    #./modules/waybar
     ./modules/vscode.nix
-    # ./modules/ags
+    #./modules/ags
     ./modules/firefox.nix
     ./modules/zoxide.nix
   ];
@@ -19,7 +19,6 @@
     unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
   in
   [
-    discord
     zip
     unzip
     fastfetch
