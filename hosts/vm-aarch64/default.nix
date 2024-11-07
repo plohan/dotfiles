@@ -7,7 +7,11 @@
       ../../modules/system.nix
       ../../modules/docker.nix
       ../../modules/i3.nix
+      ../../modules/vmware-guest.nix
     ];
+
+  disabledModules = [ "virtualisation/vmware-guest.nix" ];
+  virtualisation.vmware.guest.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -31,28 +35,7 @@
 
     dconf
 
-    open-vm-tools
-  ];
-
-  systemd.services.vmware = {
-    description = "VMWare Guest Service";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "display-manager.service" ];
-    unitConfig.ConditionVirtualization = "vmware";
-    serviceConfig.ExecStart = "${pkgs.open-vm-tools}/bin/vmtoolsd";
-  };
-
-  systemd.mounts = [
-    {
-      description = "VMWare vmblock fuse mount";
-      documentation = [ "https://github.com/vmware/open-vm-tools/blob/master/open-vm-tools/vmblock-fuse/design.txt" ];
-      unitConfig.ConditionVirtualization = "vmware";
-      what = "${pkgs.open-vm-tools}/bin/vmware-vmblock-fuse";
-      where = "/run/vmblock-fuse";
-      type = "fuse";
-      options = "subtype=vmware-vmblock,default_permissions,allow_other";
-      wantedBy = [ "multi-user.target" ];
-    }
+    xclip
   ];
 
   nixpkgs.config.allowUnSupportedSystem = true;
@@ -62,6 +45,19 @@
     enable = true;
     # pinentryPackage = "curses";
     # enableSSHSupport = true;
+  };
+
+  fileSystems."/host" = {
+    fsType = "fuse./run/current-system/sw/bin/vmhgfs-fuse";
+    device = ".host:/";
+    options = [
+      "umask=022"
+      "uid=1000"
+      "gid=1000"
+      "allow_other"
+      "auto_unmount"
+      "defaults"
+    ];
   };
 
   services.openssh.enable = true;
