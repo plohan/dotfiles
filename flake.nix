@@ -44,6 +44,23 @@
           }
         ];
       };
+      vm-aarch64 = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = { inherit nixpkgs-unstable home-manager; };
+        modules = [
+          ./hosts/vm-aarch64
+
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = ".bak";
+
+            home-manager.users.imsozrious = import ./home.nix;
+
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
+        ];
+      };
     };
   };
 }
