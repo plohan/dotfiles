@@ -55,7 +55,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = ".bak";
 
-            home-manager.users.imsozrious = import ./home.nix;
+            home-manager.users.imsozrious = import ./home-manager/home/vm-aarch64.nix;
 
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
