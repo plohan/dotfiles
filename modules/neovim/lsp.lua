@@ -2,6 +2,15 @@ local lspconfig = require("lspconfig")
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+lspconfig.tinymist.setup {
+  settings = {
+    exportPdf = "onType"
+  },
+  capabilities = capabilities,
+  root_dir = function() vim.fn.getcwd() end,
+  single_file_support = true
+}
+
 lspconfig.rust_analyzer.setup {
   capabilities = capabilities
 }
@@ -14,6 +23,20 @@ lspconfig.tsserver.setup {
 lspconfig.ccls.setup {
   capabilities = capabilities
 }
+
+vim.api.nvim_create_autocmd(
+  {
+    "BufNewFile",
+    "BufRead"
+  },
+  {
+    pattern = "*.typ",
+    callback = function()
+      local buf = vim.api.nvim_get_current_buf()
+      vim.api.nvim_buf_set_option(buf, "filetype", "typst")
+    end
+  }
+)
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
