@@ -1,8 +1,7 @@
 { config, pkgs, nixpkgs-unstable, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./hardware-configuration.nix
       ../../modules/system.nix
       ../../modules/docker.nix
@@ -43,8 +42,6 @@
   services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    # pinentryPackage = "curses";
-    # enableSSHSupport = true;
   };
 
   fileSystems."/host" = {
@@ -63,6 +60,10 @@
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "yes";
   services.openssh.settings.PasswordAuthentication = true;
+
+  services.xserver.xkb.options = pkgs.lib.mkForce "grp:menu_toggle";
+
+  services.displayManager.sddm.enable = pkgs.lib.mkForce false;
 
   hardware = {
     opengl.enable = true;
