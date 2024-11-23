@@ -46,8 +46,8 @@
 
   # nix
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.substituters = [ "https://cache.nixos.org" "https://ros.cachix.org" ];
-  nix.settings.trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "ros.cachix.org-1:dSyZxI8geDCJrwgvCOHDoAfOm5sV1wCPjBkKL+38Rvo=" ];
+  nix.settings.substituters = [ "https://cache.nixos.org" ];
+  nix.settings.trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
@@ -60,26 +60,26 @@
     initialPassword = "123456";
   };
 
-  # environment.systemPackages = [(
-  #   pkgs.catppuccin-sddm.override {
-  #     flavor = "mocha";
-  #     font = "Noto Sans";
-  #     fontSize = "9";
-  #   }
-  # )];
+  environment.systemPackages = [(
+    pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      font = "Noto Sans";
+      fontSize = "9";
+    }
+  )];
 
-  # services.displayManager.sddm = {
-  #   enable = true;
+  services.displayManager.sddm = {
+    enable = true;
 
-  #   theme = "catppuccin-mocha";
-  # };
+    theme = "catppuccin-mocha";
+  };
 
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
 
   #  Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "us,th";
-  #   variant = ",";
-  #   options = "grp:caps_toggle";
-  # };
+  services.xserver.xkb = {
+    layout = "us,th";
+    variant = ",";
+    options = "grp:caps_toggle";
+  };
 }
