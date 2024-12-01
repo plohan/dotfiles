@@ -6,6 +6,7 @@
     fastfetch
 
     lazygit
+    parted
   ];
 }
 

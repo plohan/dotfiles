@@ -17,12 +17,19 @@ lspconfig.rust_analyzer.setup {
 lspconfig.gopls.setup {
   capabilities = capabilities
 }
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   capabilities = capabilities
 }
 lspconfig.ccls.setup {
   capabilities = capabilities
 }
+lspconfig.elixirls.setup {
+  capabilities = capabilities
+}
+lspconfig.zls.setup {
+  capabilities = capabilities
+}
+
 
 vim.api.nvim_create_autocmd(
   {

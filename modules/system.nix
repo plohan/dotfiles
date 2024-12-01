@@ -22,7 +22,7 @@
   fonts = {
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
       fira-code
       fira
@@ -30,7 +30,7 @@
       jetbrains-mono
       fira-code-symbols
       powerline-fonts
-      nerdfonts
+      # nerdfonts
     ];
 
     fontconfig = {
