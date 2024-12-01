@@ -62,6 +62,8 @@
   services.openssh.settings.PermitRootLogin = "yes";
   services.openssh.settings.PasswordAuthentication = true;
 
+  services.displayManager.sddm.enable = pkgs.lib.mkForce false;
+
   hardware = {
     opengl.enable = true;
 
