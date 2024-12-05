@@ -5,10 +5,13 @@
     ../modules/kitty.nix
     ../modules/bash.nix
     ../modules/common-tool.nix
+    ../modules/waybar
     ../modules/neovim
     ../modules/vscode.nix
     ../modules/firefox.nix
     ../modules/zoxide.nix
+    ../modules/hyprland-home-manager
+    ../modules/discord.nix
   ];
 
   home.username = "imsozrious";

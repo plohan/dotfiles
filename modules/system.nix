@@ -30,7 +30,7 @@
       jetbrains-mono
       fira-code-symbols
       powerline-fonts
-      # nerdfonts
+      nerdfonts
     ];
 
     fontconfig = {
