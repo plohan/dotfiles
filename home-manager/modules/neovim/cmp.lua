@@ -8,8 +8,8 @@ cmp.setup({
     end,
   },
   performance = {
-    debounce = 250,
-    throttle = 250,
+    debounce = 100,
+    throttle = 100,
   },
   window = {
     completion = cmp.config.window.bordered(),

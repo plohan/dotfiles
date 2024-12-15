@@ -24,7 +24,9 @@ lspconfig.ccls.setup {
   capabilities = capabilities
 }
 lspconfig.elixirls.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  cmd = { "elixir-ls" },
+  root_dir = function() vim.fn.getcwd() end,
 }
 lspconfig.zls.setup {
   capabilities = capabilities

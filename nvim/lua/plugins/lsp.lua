@@ -14,10 +14,16 @@ return {
     lspconfig.gopls.setup {
       capabilities = capabilities
     }
-    lspconfig.tsserver.setup {
+    lspconfig.tsls.setup {
       capabilities = capabilities
     }
     lspconfig.ccls.setup {
+      capabilities = capabilities
+    }
+    lspconfig.elixirls.setup {
+      capabilities = capabilities
+    }
+    lspconfig.zls.setup {
       capabilities = capabilities
     }
 
