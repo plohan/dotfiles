@@ -63,6 +63,7 @@
     extraLuaConfig = ''
       ${builtins.readFile ./options.lua}
       ${builtins.readFile ./keymap.lua}
+      ${builtins.readFile ./tsrename.lua}
     '';
   };
 }
