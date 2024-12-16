@@ -15,7 +15,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     with pkgs; {
-      devShells.nestPrisma = mkShell {
+      devShells.default = mkShell {
         packages = [
           nodePackages.pnpm
           nodePackages.typescript
