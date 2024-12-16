@@ -79,5 +79,11 @@
         ];
       };
     };
+
+    templates = {
+      nestPrisma = {
+        path = ./templates/nestPrisma;
+      };
+    };
   };
 }
