@@ -9,7 +9,7 @@ vim.opt.swapfile = false
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.opt.scrolloff = 20
+vim.opt.scrolloff = 10
 
 vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split"

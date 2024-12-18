@@ -50,6 +50,8 @@
       }
       plenary-nvim
 
+      vim-fugitive
+
       {
         plugin = pkgs.vimUtils.buildVimPlugin {
           pname = "cellular-automaton";
