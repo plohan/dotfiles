@@ -17,7 +17,7 @@
 
   # Enable networking
   networking.hostName = "nixos";
-  networking.firewall.allowedTCPPorts = [ 8888 8080 3306 ];
+  networking.firewall.enable = false;
   networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs;
