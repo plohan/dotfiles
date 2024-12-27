@@ -3,6 +3,7 @@
   imports = [
     ../modules/git.nix
     ../modules/kitty.nix
+    ../modules/ghostty
     ../modules/bash.nix
     ../modules/common-tool.nix
     ../modules/neovim

@@ -9,6 +9,8 @@
       ".envrc"
     ];
     extraConfig = {
+      pull.rebase = true;
+      merge.conflictstyle = "diff3";
       merge.tool = "vimdiff";
       init.defaultBranch = "main";
       url = {
