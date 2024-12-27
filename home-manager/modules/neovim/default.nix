@@ -19,9 +19,18 @@
       }
 
       {
-        plugin = kanagawa-nvim;
-        config = "colorscheme kanagawa";
+        plugin = pkgs.vimUtils.buildVimPlugin {
+          pname = "challenger-deep";
+          src = inputs.challenger-deep;
+          version = "2024-12-27";
+        };
+        config = "colorscheme challenger_deep";
       }
+
+      # {
+      #   plugin = kanagawa-nvim;
+      #   config = "colorscheme kanagawa";
+      # }
 
       {
         plugin = lualine-nvim;
