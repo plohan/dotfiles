@@ -27,6 +27,11 @@
         config = "colorscheme challenger_deep";
       }
 
+      {
+        plugin = gruvbox;
+        config = "colorscheme gruvbox";
+      }
+
       # {
       #   plugin = kanagawa-nvim;
       #   config = "colorscheme kanagawa";
