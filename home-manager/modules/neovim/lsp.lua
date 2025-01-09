@@ -1,37 +1,36 @@
 local lspconfig = require("lspconfig")
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- local capabilities = require('blink.cmp').default_capabilities()
 
 lspconfig.tinymist.setup {
   settings = {
     exportPdf = "onType"
   },
-  capabilities = capabilities,
+  -- capabilities = capabilities,
   root_dir = function() vim.fn.getcwd() end,
   single_file_support = true
 }
 
 lspconfig.rust_analyzer.setup {
-  capabilities = capabilities
+  -- capabilities = capabilities
 }
 lspconfig.gopls.setup {
-  capabilities = capabilities
+  -- capabilities = capabilities
 }
 lspconfig.ts_ls.setup {
-  capabilities = capabilities
+  -- capabilities = capabilities
 }
 lspconfig.ccls.setup {
-  capabilities = capabilities
+  -- capabilities = capabilities
 }
 lspconfig.elixirls.setup {
-  capabilities = capabilities,
+  -- capabilities = capabilities,
   cmd = { "elixir-ls" },
   root_dir = function() vim.fn.getcwd() end,
 }
 lspconfig.zls.setup {
-  capabilities = capabilities
+  -- capabilities = capabilities
 }
-
 
 vim.api.nvim_create_autocmd(
   {

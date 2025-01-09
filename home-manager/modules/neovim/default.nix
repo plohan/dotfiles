@@ -43,20 +43,25 @@
       }
 
       {
-        plugin = nvim-cmp;
-        config = toLuaFile ./cmp.lua;
+        plugin = blink-cmp;
+        config = toLuaFile ./blink-cmp.lua;
       }
+
+      # {
+      #   plugin = nvim-cmp;
+      #   config = toLuaFile ./cmp.lua;
+      # }
+      # cmp-nvim-lsp
+      # cmp-buffer
+      # cmp-path
+      # cmp-cmdline
+      # vim-vsnip
+      # cmp-vsnip
 
       {
         plugin = nvim-lspconfig;
         config = toLuaFile ./lsp.lua;
       }
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      cmp-cmdline
-      vim-vsnip
-      cmp-vsnip
 
       {
         plugin = telescope-nvim;
