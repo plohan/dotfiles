@@ -66,7 +66,7 @@
   services.displayManager.sddm.enable = pkgs.lib.mkForce false;
 
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
 
     nvidia.modesetting.enable = true;
   };

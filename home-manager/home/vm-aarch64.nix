@@ -6,6 +6,7 @@
     ../modules/bash.nix
     ../modules/common-tool.nix
     ../modules/neovim
+    ../modules/ghostty
     ../modules/vscode.nix
     ../modules/firefox.nix
     ../modules/zoxide.nix
