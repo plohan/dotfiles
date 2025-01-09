@@ -8,6 +8,7 @@
       ".direnv"
       ".envrc"
     ];
+    maintenance.enable = true;
     extraConfig = {
       pull.rebase = true;
       merge.conflictstyle = "diff3";
