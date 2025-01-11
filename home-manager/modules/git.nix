@@ -9,6 +9,10 @@
       ".envrc"
     ];
     maintenance.enable = true;
+    aliases = {
+      skip = "update-index --skip-worktree";
+      noskip = "update-index --no-skip-worktree";
+    };
     extraConfig = {
       pull.rebase = true;
       merge.conflictstyle = "diff3";
