@@ -25,5 +25,9 @@
       };
       user.signingkey = "5ACE2C4FBD9AD588";
     };
+    aliases = {
+      skip = "update-index --skip-worktree";
+      no-skip = "update-index --no-skip-worktree";
+    };
   };
 }
