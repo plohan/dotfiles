@@ -34,10 +34,6 @@
       url = "github:challenger-deep-theme/vim";
       flake = false;
     };
-
-    nix-ld.url = "github:Mic92/nix-ld";
-    # this line assume that you also have nixpkgs as an input
-    nix-ld.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-ld, ... }@inputs: {
@@ -91,12 +87,23 @@
 
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
+        ];
+      };
+      minimal-vm-x86_64 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit nixpkgs-unstable home-manager; };
+        modules = [
+          ./hosts/vm-x86_64
 
-          nix-ld.nixosModules.nix-ld
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = ".bak";
 
-          # The module in this repository defines a new module under (programs.nix-ld.dev) instead of (programs.nix-ld)
-          # to not collide with the nixpkgs version.
-          { programs.nix-ld.dev.enable = true; }
+            home-manager.users.imsozrious = import ./home-manager/home/minimal.nix;
+
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
         ];
       };
     };
