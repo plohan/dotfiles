@@ -34,9 +34,13 @@
       url = "github:challenger-deep-theme/vim";
       flake = false;
     };
+
+    nix-ld.url = "github:Mic92/nix-ld";
+    # this line assume that you also have nixpkgs as an input
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-ld, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -87,6 +91,12 @@
 
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
+
+          nix-ld.nixosModules.nix-ld
+
+          # The module in this repository defines a new module under (programs.nix-ld.dev) instead of (programs.nix-ld)
+          # to not collide with the nixpkgs version.
+          { programs.nix-ld.dev.enable = true; }
         ];
       };
     };
