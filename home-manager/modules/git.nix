@@ -2,8 +2,8 @@
 {
   programs.git = {
     enable = true;
-    userName = "ImSoZRious";
-    userEmail = "30285202+ImSoZRious@users.noreply.github.com";
+    userName = "plohan";
+    userEmail = "30285202+plohan@users.noreply.github.com";
     ignores = [
       ".direnv"
       ".envrc"
