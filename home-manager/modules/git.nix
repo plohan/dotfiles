@@ -50,6 +50,9 @@
         "ssh://git@github.com" = {
           insteadOf = "https://github.com";
         };
+        "ssh://git@github.com/"= {
+          insteadof = "gh:";
+        };
       };
       user.signingkey = "5ACE2C4FBD9AD588";
     };
