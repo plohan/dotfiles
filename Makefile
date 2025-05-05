@@ -1,4 +1,4 @@
-NIXADDR ?= 192.168.147.128
+NIXADDR ?= 172.16.121.128
 NIXUSER ?= imsozrious
 
 MAKEFILE_DIR = $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
