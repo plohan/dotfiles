@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
+(setq doom-font "Rec Mono Duotone:pixelsize=18:weight=regular:slant=normal:width=normal:spacing=100:scalable=true")
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -108,4 +108,12 @@
   (setq company-show-numbers t)
   (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
 
+(after! lsp-mode
+  (setq lsp-enable-symbol-highlighting nil))
+
 (setq display-line-numbers-type 'relative)
+
+(setq doom-theme 'doom-one)
+
+(after! centaur-tabs
+  (setq centaur-tabs-height 24))
