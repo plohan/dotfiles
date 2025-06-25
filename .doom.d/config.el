@@ -57,6 +57,10 @@
          :target (file+head "items/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n#+date: %U\n#+primary_url: \n#+item_tag: \n#+owned_amount: \n#+price: \n#+filetags: Item\n\n#+hugo_base_dir: ../../hugo\n#+hugo_section: items\n\n\n")
          :unnarrowed t)
+        ("R" "reading" plain "%?"
+         :target (file+head "readings/%<%Y%m%d%H%M%S>-${slug}.org"
+                            "#+title: ${title}\n#+date: %U\n#+primary_url: \n#+reading_type: blog\n#+filetags: Reading\n\n#+hugo_base_dir: ../../hugo\n#+hugo_section: readings\n\n\n")
+         :unnarrowed t)
         ("r" "random" plain "%?"
          :target (file+head "randoms/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n#+date: %U\n#+filetags: Random\n\n#+hugo_base_dir: ../../hugo\n#+hugo_section: randoms\n\n\n")
