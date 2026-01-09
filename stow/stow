@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+show_usage() {
+  echo "Usage: $0 [-C <directory>] [stowoptions]"
+}
+
+stow_opts=""
+stow_dir=""
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    -C)
+      shift
+      stow_dir="$1"
+    ;;
+    *)
+      stow_opts="$stow_opts $1"
+    ;;
+  esac
+  shift
+done
+
+[ -z "$stow_dir" ] && echo "Error: No directory provided" && exit 1
+
+cd "$stow_dir" && stow $stow_opts .
