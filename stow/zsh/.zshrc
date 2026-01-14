@@ -117,8 +117,6 @@ export FNM_RESOLVE_ENGINES="true"
 export FNM_ARCH="arm64"
 rehash
 
-# Added by Windsurf
-export PATH="/Users/pannawich/.codeium/windsurf/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
@@ -165,3 +163,5 @@ export COREPACK_ENABLE_AUTO_PIN=0
 alias k="kubectl"
 alias lj="lazyjj"
 alias book-sync="make -C ~/work/book"
+
+[ -f "/Users/pannawich/.ghcup/env" ] && . "/Users/pannawich/.ghcup/env" # ghcup-env
