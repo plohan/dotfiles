@@ -6,6 +6,8 @@ email = "30285202+plohan@users.noreply.github.com"
 
 [ui]
 default-command = "log"
+pager = "less -F"
+editor = "vim"
 
 [aliases]
 push = ["git", "push"]
