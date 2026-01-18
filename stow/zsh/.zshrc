@@ -158,6 +158,30 @@ yp () {
   pwd | pbcopy
 }
 
+bundle() {
+  b64="$(
+    tar -cf - --no-xattrs "$@" \
+    | gzip -9 \
+    | base64 | tr -d '\n'
+  )" || return 1
+
+  printf "echo '%s' | base64 -d | gzip -d | tar -xf -\n" "$b64"
+}
+
+bundley() {
+  b64="$(
+    tar -cf - --no-xattrs "$@" \
+    | gzip -9 \
+    | base64 | tr -d '\n'
+  )" || return 1
+
+  printf "echo '%s' | base64 -d | gzip -d | tar -xf -\n" "$b64" | pbcopy
+}
+
+bundleremote() {
+  echo 'echo YnVuZGxlKCkgewogIGI2ND0iJCh0YXIgLWNmIC0gLS1uby14YXR0cnMgIiRAIiB8IGd6aXAgLTkgfCBiYXNlNjQgLXcgMCkiIHx8IHJldHVybiAxCiAgcHJpbnRmICJlY2hvICclcycgfCBiYXNlNjQgLWQgfCBnemlwIC1kIHwgdGFyIC14ZiAtIiAiJGI2NCIKfQo= | base64 -d | eval'
+}
+
 eval "$(mise activate)"
 export COREPACK_ENABLE_AUTO_PIN=0
 alias k="kubectl"
