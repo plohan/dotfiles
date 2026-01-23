@@ -184,6 +184,18 @@ bundleremote() {
 
 eval "$(mise activate)"
 export COREPACK_ENABLE_AUTO_PIN=0
+alias ka="kubectl apply -f"
+alias kd="kubectl delete"
+alias kg="kubectl get"
+alias kdf="kubectl delete -f"
+alias v="nvim"
+alias lg="lazygit"
+alias dc="docker compose"
+alias d="docker"
+alias :q="exit"
+alias :wq="exit"
+alias j="just"
+alias k="kubectl"
 alias k="kubectl"
 alias lj="lazyjj"
 alias book-sync="make -C ~/work/book"
