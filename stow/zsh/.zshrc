@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="linuxonly"
 
-export PATH="$PATH:/Users/pannawich/.local/bin"
+export PATH="$PATH:/Users/$USER/.local/bin"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -200,4 +200,4 @@ alias k="kubectl"
 alias lj="lazyjj"
 alias book-sync="make -C ~/work/book"
 
-[ -f "/Users/pannawich/.ghcup/env" ] && . "/Users/pannawich/.ghcup/env" # ghcup-env
+[ -f "/Users/$USER/.ghcup/env" ] && . "/Users/$USER/.ghcup/env" # ghcup-env
