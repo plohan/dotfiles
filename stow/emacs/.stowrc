@@ -1,2 +1,2 @@
---target=$HOME/.ssh/
+--target=$HOME/.emacs.d/
 
